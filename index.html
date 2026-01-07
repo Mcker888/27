@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>วิทยาลัยเทคนิคเลย - ประวัติและข้อมูล</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>ประวัติวิทยาลัยเทคนิคเลย</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* ชุดสีเขียวเข้มตามโจทย์ */
-            --dark-green: #006400;   /* เขียวเข้มหลัก (ตามภาพ) */
-            --header-text: #006400;  /* สีตัวอักษรหัวข้อ */
-            --sub-text: #333333;     /* สีตัวอักษรภาษาอังกฤษ */
-            --bg-color: #ffffff;     /* สีพื้นหลังขาว */
-            --section-bg: #f9fbf9;   /* สีพื้นหลังส่วนเนื้อหา (เขียวจางมากๆ) */
-            --border-line: #006400;  /* เส้นขีดคั่นสีเขียวเข้ม */
+            /* ชุดสีตามโจทย์ เขียว-ขาว */
+            --main-green: #006400; /* เขียวเข้ม (Forest Green) ให้ความรู้สึกเป็นทางการ */
+            --light-green: #f1f8f1; /* เขียวอ่อนมาก สำหรับพื้นหลังส่วนย่อย */
+            --accent-green: #4CAF50; /* เขียวสด สำหรับเน้นคำ */
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e0e0e0;
         }
 
         * {
@@ -24,208 +25,271 @@
 
         body {
             font-family: 'Sarabun', sans-serif;
-            background-color: var(--bg-color);
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 16px;
         }
 
-        /* --- ส่วนหัว (Header) ตามภาพ --- */
-        header {
-            background-color: #fff;
-            padding-top: 40px;
-            /* ไม่ใส่ padding-bottom เพราะจะมีแถบสีเขียวคั่น */
-        }
-
-        .header-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-        }
-
-        h1.thai-name {
-            color: var(--header-text);
-            font-size: 2.8rem;
-            font-weight: 700;
-            text-align: center; /* ชื่อไทยอยู่ตรงกลาง */
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-
-        p.eng-name {
-            color: var(--sub-text);
-            font-size: 1.1rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-            /* จัดชิดซ้าย หรือ ปรับเป็น center ตามความชอบ (ในภาพดูเหมือนอยู่ซ้ายล่าง) */
-            text-align: left; 
-            margin-top: 30px; /* เว้นระยะห่างจากชื่อไทยนิดหน่อย */
-        }
-
-        /* แถบสีเขียวเข้มคาดด้านล่าง */
-        .green-bar {
-            height: 12px; /* ความหนาของเส้น */
-            background-color: var(--dark-green);
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        /* --- ส่วนเนื้อหา (Content) --- */
+        /* Container หลัก */
         .container {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        section {
-            margin-bottom: 50px;
-            background-color: var(--section-bg);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid var(--dark-green); /* เส้นขอบซ้ายสีเขียวเข้ม */
+        /* ส่วนหัว */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--main-green);
+        }
+
+        h1 {
+            color: var(--main-green);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         h2 {
-            color: var(--dark-green);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            color: var(--main-green);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 5px solid var(--accent-green);
         }
 
         h3 {
-            color: #004d00;
             font-size: 1.2rem;
-            margin-top: 20px;
+            color: var(--text-dark);
             margin-bottom: 10px;
         }
 
-        p, li {
-            font-size: 1rem;
-            color: #444;
-            margin-bottom: 10px;
+        /* ส่วนเนื้อหา */
+        section {
+            margin-bottom: 60px;
+        }
+
+        p {
+            margin-bottom: 15px;
             text-align: justify;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
+        /* การแสดงข้อมูลติดต่อ */
+        .contact-info {
+            background-color: var(--light-green);
+            padding: 30px;
+            border-radius: 8px;
+            font-size: 0.95rem;
         }
 
-        /* ข้อมูลการติดต่อ */
-        .contact-box {
+        .contact-item {
+            margin-bottom: 10px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--main-green);
+        }
+
+        /* ส่วนความหมายสี */
+        .color-meaning {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 20px;
         }
-        
+
         @media(min-width: 600px) {
-            .contact-box {
+            .color-meaning {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        .info-item strong {
-            color: var(--dark-green);
+        .meaning-box {
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        /* ไทม์ไลน์ประวัติ */
-        .timeline-item {
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: var(--main-green);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            font-weight: 600;
+            padding: 20px;
+            background-color: var(--light-green);
+            border-radius: 50px;
+        }
+
+        /* เส้นเวลาประวัติ (Timeline แบบรายการ) */
+        .history-list {
+            list-style: none;
+        }
+
+        .history-item {
             display: flex;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed #ccc;
+            flex-direction: column;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--light-green);
             padding-bottom: 15px;
         }
-        .year {
-            min-width: 100px;
-            font-weight: bold;
-            color: var(--dark-green);
+
+        @media(min-width: 600px) {
+            .history-item {
+                flex-direction: row;
+            }
         }
-        .desc {
+
+        .year {
+            min-width: 120px;
+            font-weight: 600;
+            color: var(--main-green);
+            font-size: 1.1rem;
+        }
+
+        .event {
             flex: 1;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: var(--dark-green);
-            color: #fff;
-            margin-top: 50px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
         }
+
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1 class="thai-name">วิทยาลัยเทคนิคเลย</h1>
-            <p class="eng-name">Loei Technical College</p>
-        </div>
-        <div class="green-bar"></div> </header>
-
     <div class="container">
+        
+        <header>
+            <h1>วิทยาลัยเทคนิคเลย</h1>
+            <p>Loei Technical College</p>
+        </header>
 
         <section>
             <h2>ข้อมูลทั่วไป</h2>
-            <div class="contact-box">
-                <div class="info-item">
-                    <strong>ที่ตั้ง:</strong> เลขที่ 272 ถ.เจริญรัฐ ต.กุดป่อง อ.เมือง จ.เลย 42000
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">ที่ตั้ง:</span> 
+                    เลขที่ 272 ถ.เจริญรัฐ ต.กุดป่อง อ.เมือง จ.เลย 42000
                 </div>
-                <div class="info-item">
-                    <strong>โทรศัพท์:</strong> 042-811591, 080-1502400
+                <div class="contact-item">
+                    <span class="contact-label">โทรศัพท์:</span> 
+                    042-811591, 080-1502400
                 </div>
-                <div class="info-item">
-                    <strong>เว็บไซต์:</strong> www.loeitech.ac.th
+                <div class="contact-item">
+                    <span class="contact-label">โทรสาร:</span> 
+                    042-812568
                 </div>
-                <div class="info-item">
-                    <strong>Facebook:</strong> www.loeitech.ac.th
+                <div class="contact-item">
+                    <span class="contact-label">เว็บไซต์:</span> 
+                    https://www.loeitech.ac.th
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">อีเมล:</span> 
+                    loei@loeitech.mail.go.th
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>สีประจำวิทยาลัย: เขียว – ขาว</h2>
-            <p><strong>ความหมาย:</strong></p>
-            <ul>
-                <li><strong>สีเขียว:</strong> มาจาก สีเหลือง (ความสว่าง/ปัญญา) ผสมกับ สีน้ำเงิน (ความสูงศักดิ์)</li>
-                <li><strong>สีขาว:</strong> ความซื่อสัตย์ บริสุทธิ์</li>
-            </ul>
-            <p style="font-weight: 500; color: var(--dark-green); text-align: center; margin-top: 20px;">
+            <h2>สัญลักษณ์และสีประจำวิทยาลัย</h2>
+            <p><strong>สีประจำวิทยาลัย: สีเขียว – ขาว</strong></p>
+            
+            <div class="color-meaning">
+                <div class="meaning-box">
+                    <h3>ที่มาของสีเขียว</h3>
+                    <p>มาจาก สีเหลือง ผสมกับ สีน้ำเงิน</p>
+                    <ul style="padding-left: 20px; margin-top: 10px;">
+                        <li><strong>สีเหลือง:</strong> ความสว่าง ปัญญา</li>
+                        <li><strong>สีน้ำเงิน:</strong> ความสูงศักดิ์ (Noble Rank)</li>
+                    </ul>
+                </div>
+                <div class="meaning-box">
+                    <h3>ความหมายโดยรวม</h3>
+                    <p><strong>สีขาว:</strong> ความซื่อสัตย์ บริสุทธิ์</p>
+                    <p style="margin-top: 10px;">เมื่อรวมกัน สีเขียว – ขาว จึงหมายความว่า</p>
+                </div>
+            </div>
+
+            <div class="quote">
                 “สถาบันสร้างสมปัญญา เกียรติศักดิ์ ความซื่อสัตย์แห่งตน และวิชาชีพ”
-            </p>
+            </div>
         </section>
 
         <section>
             <h2>ประวัติความเป็นมา</h2>
-            <div class="timeline-item">
-                <div class="year">17 ก.ค. 2481</div>
-                <div class="desc">ก่อตั้ง "โรงเรียนช่างไม้เลย" ริมฝั่งแม่น้ำเลย</div>
-            </div>
-            <div class="timeline-item">
-                <div class="year">26 ส.ค. 2502</div>
-                <div class="desc">เปลี่ยนชื่อเป็น "โรงเรียนการช่างเลย"</div>
-            </div>
-            <div class="timeline-item">
-                <div class="year">1 ม.ค. 2522</div>
-                <div class="desc">เปลี่ยนชื่อเป็น "โรงเรียนเทคนิคเลย"</div>
-            </div>
-            <div class="timeline-item">
-                <div class="year">พ.ศ. 2524</div>
-                <div class="desc">ยกฐานะเป็น "วิทยาลัยเทคนิคเลย"</div>
-            </div>
-            <div class="timeline-item">
-                <div class="year">ปัจจุบัน</div>
-                <div class="desc">เปิดสอนตั้งแตระดับ ปวช. ปวส. จนถึงระดับปริญญาตรี (เทคโนโลยีบัณฑิต) ในหลากหลายสาขาวิชาช่างอุตสาหกรรมและเทคโนโลยี</div>
+            
+            <div class="history-list">
+                <div class="history-item">
+                    <div class="year">17 ก.ค. 2481</div>
+                    <div class="event">กระทรวงศึกษาธิการตั้ง "โรงเรียนช่างไม้เลย" เปิดสอนครั้งแรกบริเวณริมฝั่งแม่น้ำเลย มีครู 2 คน นักเรียน 16 คน</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2496</div>
+                    <div class="event">ขยายหลักสูตรเป็น "อาชีวะศึกษาตอนปลาย" (3 ปี)</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2500</div>
+                    <div class="event">ขยายหลักสูตรเป็น "ประโยคอาชีวศึกษาชั้นสูง"</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">26 ส.ค. 2502</div>
+                    <div class="event">เปลี่ยนชื่อเป็น "โรงเรียนการช่างเลย" (วันสถาปนาโรงเรียนคือ 15 กันยายน 2502)</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">1 ม.ค. 2522</div>
+                    <div class="event">เปลี่ยนชื่อเป็น "โรงเรียนเทคนิคเลย"</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2524</div>
+                    <div class="event">ยกฐานะขึ้นเป็น "วิทยาลัยเทคนิคเลย"</div>
+                </div>
+
+                <br><h3>พัฒนาการด้านหลักสูตร</h3><br>
+
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2515-2522</div>
+                    <div class="event">เปิดสอนแผนกวิชาช่างยนต์, ช่างเชื่อมโลหะแผ่น, ช่างไฟฟ้า และช่างอิเล็กทรอนิกส์ (ระดับ ปวช.)</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2525</div>
+                    <div class="event">เปิดสอนแผนกวิชาเทคนิควิศวกรรมโยธา (ระดับ ปวท.)</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2529-2539</div>
+                    <div class="event">เปิดสอนระดับ ปวส. ในสาขาช่างไฟฟ้า, อิเล็กทรอนิกส์, ช่างยนต์, ก่อสร้าง, เทคนิคโลหะ และเทคนิคการผลิต</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2557</div>
+                    <div class="event">เริ่มเปิดสอนระดับปริญญาตรี หลักสูตรเทคโนโลยีบัณฑิต (ทล.บ.) สาขาเทคโนโลยีการก่อสร้าง (ปัจจุบันคือ สาขาเทคโนโลยีโยธา)</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">พ.ศ. 2558-2564</div>
+                    <div class="event">เปิดสอน ปริญญาตรี เพิ่มเติมในสาขาเทคโนโลยีไฟฟ้า, เทคโนโลยียานยนต์ (เครื่องกล), และเทคโนโลยีการผลิต</div>
+                </div>
+                <div class="history-item">
+                    <div class="year">ปัจจุบัน</div>
+                    <div class="event">มีการพัฒนาหลักสูตรอย่างต่อเนื่อง ทั้งระดับ ปวช., ปวส. และปริญญาตรี ครอบคลุมทั้งช่างอุตสาหกรรม, เทคโนโลยีสารสนเทศ และสถาปัตยกรรม</div>
+                </div>
             </div>
         </section>
 
-    </div>
+        <footer>
+            <p>© วิทยาลัยเทคนิคเลย | Loei Technical College</p>
+        </footer>
 
-    <footer>
-        &copy; วิทยาลัยเทคนิคเลย | สร้างสรรค์ด้วยความเรียบง่าย
-    </footer>
+    </div>
 
 </body>
 </html>
